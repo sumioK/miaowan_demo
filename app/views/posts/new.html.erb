@@ -1,0 +1,6 @@
+<%= form_tag("/posts/create",{multipart:true}) do %>
+    <p>画像</p>
+    <input name="image_id" type="file">
+    <input name="content">
+    <input type="submit" value="投稿">
+<% end %>

@@ -1,0 +1,10 @@
+<% @users.each do |user| %>
+<div class="profiel">
+    <div class="profiel_img">
+        <%= link_to image_tag("/user_images/#{user.profiel_image}") , "/users/#{user.id}" %>
+    </div>
+    <div class="profiel_name">
+        <%= user.name %>
+    </div>
+</div>
+<% end %>

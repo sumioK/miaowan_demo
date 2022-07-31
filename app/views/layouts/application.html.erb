@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MiaowanDemo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <header>
+      <% if @current_user %>
+        <h2><%= link_to "MiaoWan" , "/posts/index" %></h2>
+      <% else %>
+        <h2><%= link_to "MiaoWan" , "/" %></h2>
+      <% end %>
+      <ul class='heaer_nav'>
+        <li><%= link_to "投稿一覧" , "/posts/index" %></li>
+      <% if @current_user %>
+        <li><%= link_to "投稿" , "/posts/new" %></li>
+        <li><%= link_to "ユーザー一覧" , "/users/index" %></li>
+        <li><%= link_to"Logout" , "/logout" , data: { turbo_method: :post }%></li>
+        <li><%= link_to"こんにちは#{@current_user.name}さん" , "/users/#{@current_user.id}" %></li>
+      <% else%>
+        <li><%= link_to "新規登録" , "/signup" %></li>
+        <li><%= link_to "ログイン" , "/login" %></li>
+      <% end%>
+      </ul>
+    </header>
+    <% if flash[:notice]%>
+      <div class="flash">
+          <%= flash[:notice]%>
+      </div>
+    <% end %>
+      <%= yield %>
+  </body>
+</html>

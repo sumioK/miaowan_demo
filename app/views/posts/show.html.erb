@@ -1,0 +1,6 @@
+<img src="<%= "/user_images/#{@post.user.profiel_image}"%>">
+<h2><%= @post.user.name %></h2>
+<img src="<%= "/post_images/#{@post.image_id}" %> ">
+<h4><%= @post.content %></h4>
+<p><%= link_to"編集", "/posts/#{@post.id}/edit"%></p>
+<p><%= link_to"削除", "/posts/#{@post.id}/destroy" ,data: { turbo_method: :post}%></p>

@@ -1,0 +1,6 @@
+<%= form_tag("/posts/#{@post.id}/update" , {multipart:true}) do %>
+    <p>画像</p>
+    <input type="file" name="image_id">
+    <input name="content" value="<%= @post.content %>">
+    <input type="submit" value="更新">
+<% end %>

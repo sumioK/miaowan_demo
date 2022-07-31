@@ -1,0 +1,12 @@
+<h2 class="form-heading">Sign Up</h2>
+<div class="form users-form">
+    <%= form_tag("/signup") do%>
+        <p>user name</p>
+        <input name="name">
+        <p>email</p>
+        <input name="email">
+        <p>password</p>
+        <input name="password" type="password">
+        <input type="submit" value="sign up">
+    <% end%>
+</div>
